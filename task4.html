@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		body {
+			background-image: url("https://klike.net/uploads/posts/2020-09/1599896359_5.jpg");
+			background-size: cover;
+		}
+
+		h2 {
+			color: white;
+		}
+
+		label {
+			color: white;
+		}
+		form{
+			display: flex;
+			justify-content: center;
+			margin: 9vh 0;
+		}
+		table{
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.2);
+			border-radius: 7px;
+		}
+		td{
+			height:1.75rem;
+		}
+		.btn{
+			text-align: center;
+		}
+		.btn button{
+			background: lightblue;
+			color: rgb(27, 18, 18);
+			font-weight: bold;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.btn button:hover{
+			background: darkblue;
+			color: rgb(204, 191, 191);
+		}
+	</style>
+</head>
+
+<body>
+	<form>
+		<table>
+			<tr>
+				<th colspan="2">
+					<h2>Реєстраційні дані</h2>
+				</th>
+			</tr>
+			<tr>
+				<td align="left"><label for="username">Ім'я користувача:</label></td>
+				<td align="right"><input type="text" id="username" required></td>
+			</tr>
+			<tr>
+				<td><label for="email">Email:</label></td>
+				<td><input type="email" id="email" required></td>
+			</tr>
+			<tr>
+				<td><label for="password">Пароль:</label></td>
+				<td><input type="password" id="password" minlength="8" required></td>
+			</tr>
+			<tr>
+				<td><label for="password-confirm">Підтвердіть пароль:</label></td>
+				<td><input type="password" id="password-confirm" minlength="8" required></td>
+			</tr>
+			<tr>
+				<th colspan="2">
+					<h2>Персональні дані</h2>
+				</th>
+			</tr>
+			<tr>
+				<td><label for="first-name">Ім'я:</label></td>
+				<td><input type="text" id="first-name" required></td>
+			</tr>
+			<tr>
+				<td><label for="last-name">Прізвище:</label></td>
+				<td><input type="text" id="last-name" required></td>
+			</tr>
+			<tr>
+				<td><label for="birthdate">Дата народження:</label></td>
+				<td><input type="date" id="birthdate" required></td>
+			</tr>
+			<tr>
+				<td><label for="gender">Стать:</label></td>
+				<td><select id="gender" required>
+						<option value="" selected disabled>Оберіть стать</option>
+						<option value="male">Чоловіча</option>
+						<option value="female">Жіноча</option>
+						<option value="other">Інше</option>
+					</select></td>
+			</tr>
+			<tr><td colspan="2"><br></td></tr>
+			<tr class="btn">
+				<td colspan="2"><button type="submit">Зареєструватися</button></td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>

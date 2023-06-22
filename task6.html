@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Обчислення суми чисел</title>
+    <style>
+        body {
+			background-image: url("https://klike.net/uploads/posts/2020-09/1599896359_5.jpg");
+			background-size: cover;
+		}
+
+		h2 {
+			color: white;
+		}
+
+		label {
+			color: white;
+		}
+		form{
+			display: flex;
+            flex-direction: column;
+			align-items: center;
+			margin: 25vh;
+		}
+		table{
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.2);
+			border-radius: 7px;
+		}
+        td{
+            height: 2rem;
+        }
+		.btn{
+			text-align: center;
+		}
+		.btn button{
+			background: lightblue;
+			color: rgb(27, 18, 18);
+			font-weight: bold;
+			padding: 10px;
+            margin: 10px 0;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.btn button:hover{
+			background: darkblue;
+			color: rgb(204, 191, 191);
+		}
+    </style>
+</head>
+
+<body>
+    <form id="post_f" method="post">
+        <h2>Поштова форма</h2>
+        <table>
+            <tr>
+                <td><label for="email">Адреса e-mail:</label></td>
+                <td><input type="email" id="email" name="email" required></td>
+            </tr>
+            <tr>
+                <td><label for="theme">Тема листа:</label></td>
+                <td><input type="text" id="theme" name="theme" required></td>
+            </tr>
+            <tr>
+                <td><label for="mail">Повідомлення:</label></td>
+                <td><textarea type="text" id="mail" name="mail"></textarea></td>
+            </tr>
+            <tr class="btn">
+                <td colspan="2"><button type="submit">Надіслати</button></td>
+            </tr>         
+        </table>
+    </form>
+    <script>
+        var form = document.querySelector('#post_f');
+
+        form.addEventListener('submit', function (event) {
+            var mail = document.querySelector('#email').value;
+            form.setAttribute('action', 'mailto:'+mail);
+        });
+    </script>
+</body>
+
+</html>

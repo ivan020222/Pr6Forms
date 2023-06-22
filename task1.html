@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 1</title>
+</head>
+<body>
+    <a href="index.html">&larr; Назад</a>
+    <h2>Кольори фону</h2>
+    <form>
+        <select onchange="changeColor();" name="color" id="color">
+            <option value="selcol" selected disabled>Оберіть колір
+            <option value="blue" class="item1">Синій
+            <option value="yellow" class="item2">Жовтий
+            <option value="red" class="item3">Червоний
+        </select>
+    </form>
+    <script language="JavaScript">
+        function changeColor(){
+            var color = document.getElementById('color').value;
+            document.bgColor = color;
+        }
+    </script>
+</body>
+</html>

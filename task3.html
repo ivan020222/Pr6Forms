@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Завдання 3</title>
+</head>
+
+<body>
+    <a href="index.html">&larr; Назад</a>
+    <h2>Запитання: хто сказав гав?</h2>
+    <form>
+        <table border="2" style="border-color: silver;">
+            <tr align="center">
+                <td>Перемикачі</td>
+                <td>Підказки</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="var" id="var1" value="1"></td>
+                <td>Кіт</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="var" id="var1" value="2"></td>
+                <td>Собака</td>
+            </tr>
+            <tr align="center">
+                <td><input type="radio" name="var" id="var1" value="3"></td>
+                <td>Миша</td>
+            </tr>
+            <tr align="center">
+                <td colspan="2"><input type="button" value="Перевірка рішення" onclick="check();"></td>
+            </tr>
+        </table>
+    </form>
+    <script language="JavaScript">
+        function check() {
+            var v = document.querySelector('input[name="var"]:checked').getAttribute('value');
+            if (v == 2) {
+                alert("Правильна відповідь");
+            } else {
+                alert("Неправильна відповідь. Правильна відповідь - собака");
+            }
+        }
+    </script>
+</body>
+
+</html>

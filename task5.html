@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Обчислення суми чисел</title>
+    <style>
+        body {
+			background-image: url("https://klike.net/uploads/posts/2020-09/1599896359_5.jpg");
+			background-size: cover;
+		}
+
+		h2 {
+			color: white;
+		}
+
+		label {
+			color: white;
+		}
+		form{
+			display: flex;
+            flex-direction: column;
+			align-items: center;
+			margin: 25vh;
+		}
+		table{
+			padding: 20px;
+			background-color: rgba(0, 0, 0, 0.2);
+			border-radius: 7px;
+		}
+        td{
+            height: 2rem;
+        }
+		.btn{
+			text-align: center;
+		}
+		.btn button{
+			background: lightblue;
+			color: rgb(27, 18, 18);
+			font-weight: bold;
+			padding: 10px;
+            margin: 10px 0;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+		.btn button:hover{
+			background: darkblue;
+			color: rgb(204, 191, 191);
+		}
+    </style>
+</head>
+
+<body>
+    <form id="submit_f">
+        <h2>Обчислення суми чисел</h2>
+        <table>
+            <tr>
+                <td><label for="number1">Перше число:</label></td>
+                <td><input type="number" id="number1" required></td>
+            </tr>
+            <tr>
+                <td><label for="number2">Друге число:</label></td>
+                <td><input type="number" id="number2" required></td>
+            </tr>
+            <tr class="btn">
+                <td colspan="2"><button type="submit">Обчислити</button></td>
+            </tr>
+            <tr>
+                <td><label for="result">Результат:</label></td>
+                <td><input type="text" id="result" readonly></td>
+            </tr>           
+        </table>
+    </form>
+    <script>
+        var form = document.querySelector('#submit_f');
+        var output = document.querySelector('#result');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            var num1 = parseInt(document.querySelector('#number1').value);
+            var num2 = parseInt(document.querySelector('#number2').value);
+
+            var sum = num1 + num2;
+
+            output.value = sum;
+        });
+    </script>
+</body>
+
+</html>
