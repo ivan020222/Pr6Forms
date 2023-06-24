@@ -3,82 +3,92 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Обчислення суми чисел</title>
+    <title>Поштова форма</title>
     <style>
         body {
-			background-image: url("https://klike.net/uploads/posts/2020-09/1599896359_5.jpg");
-			background-size: cover;
-		}
+            background-image: url("https://klike.net/uploads/posts/2020-09/1599896359_5.jpg");
+            background-size: cover;
+        }
 
-		h2 {
-			color: white;
-		}
+        h2 {
+            color: white;
+        }
 
-		label {
-			color: white;
-		}
-		form{
-			display: flex;
+        label {
+            color: white;
+        }
+
+        form {
+            display: flex;
             flex-direction: column;
-			align-items: center;
-			margin: 25vh;
-		}
-		table{
-			padding: 20px;
-			background-color: rgba(0, 0, 0, 0.2);
-			border-radius: 7px;
-		}
-        td{
+            align-items: center;
+            margin: 25vh;
+        }
+
+        table {
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 7px;
+        }
+
+        td {
             height: 2rem;
         }
-		.btn{
-			text-align: center;
-		}
-		.btn button{
-			background: lightblue;
-			color: rgb(27, 18, 18);
-			font-weight: bold;
-			padding: 10px;
+
+        .btn {
+            text-align: center;
+        }
+
+        .btn input {
+            background: lightblue;
+            color: rgb(27, 18, 18);
+            font-weight: bold;
+            padding: 10px;
             margin: 10px 0;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-		.btn button:hover{
-			background: darkblue;
-			color: rgb(204, 191, 191);
-		}
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .btn input[type="submit"]{
+            margin-right: 10px;
+        }
+
+        .btn input:hover {
+            background: darkblue;
+            color: rgb(204, 191, 191);
+        }
     </style>
 </head>
 
 <body>
-    <form id="post_f" method="POST">
+    <form name="mailer" method="post" action="" enctype="text/plain"
+        onSubmit="(document.mailer.action += mailtoandSubject)">
         <h2>Поштова форма</h2>
         <table>
             <tr>
-                <td><label for="email">Адреса e-mail:</label></td>
-                <td><input type="email" id="email" name="email" required></td>
+                <td><label for="Name">Ім'я:</label></td>
+                <td><input type="text" name="Name" onChange="msg(this.form)" required></td>
             </tr>
             <tr>
-                <td><label for="theme">Тема листа:</label></td>
-                <td><input type="text" id="theme" name="subject" required></td>
+                <td><label for="Subject">Тема:</label></td>
+                <td><input type="text" name="Subject" onChange="msg(this.form)" required></td>
             </tr>
             <tr>
-                <td><label for="mail">Повідомлення:</label></td>
-                <td><textarea type="text" id="mail" name="text"></textarea></td>
+                <td><label for="Message">Повідомлення:</label></td>
+                <td><textarea cols="25" rows="6" onChange="msg(this.form)" name="Message"></textarea></td>
             </tr>
             <tr class="btn">
-                <td colspan="2"><button type="submit">Надіслати</button></td>
-            </tr>         
+                <td colspan="2"><input type="submit" value="Надіслати"><input type="reset" value="Очистити"></td>
+            </tr>
         </table>
     </form>
     <script>
-        var form = document.querySelector('#post_f');
-
-        form.addEventListener('submit', function (event) {
-            var mail = document.querySelector('#email').value;
-            form.setAttribute('action', 'mailto:'+mail);
-        });
+        function msg() { // функція відправки
+            document.mailer.action = "mailto:vovki.2105@gmail.com"
+            mailtoandSubject = (('?Subject=' + document.mailer.Subject.value) + '&Body=' +
+                document.mailer.Message.value);
+        }
     </script>
 </body>
 
